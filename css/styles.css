@@ -212,7 +212,6 @@ img{
 	width: 380px;
 	height: 250px;
 	background: url("../img/video.png");
-	cursor: pointer;
 }
 .play__circle{
 	max-width: 100px;
@@ -221,6 +220,7 @@ img{
 	left: 50%;
 	top: 0;
 	transform: translate(-50%, 70%);
+	cursor: pointer;
 }
 .about__down-content{
 	display: flex;
