@@ -57,4 +57,4 @@ class VideoPlayer {
         }
     }
 }
-new VideoPlayer('.about__video .play', '.overlay').init();
+new VideoPlayer('.about__video', '.overlay').init();

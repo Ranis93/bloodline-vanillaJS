@@ -48,8 +48,9 @@ img{
 	max-width: 240px;
 }
 .header__contacts-second{
-	margin-left: 10px;
+	margin-left: 87px;
 	max-width: 290px;
+	flex-shrink: 0;
 }
 .header__excort{
 	margin-top: 15px;
@@ -162,6 +163,9 @@ img{
 	background: #007632;
 	box-shadow: 0px 4px 10px rgba(38, 91, 61, 0.34);
 }
+.history__btn:hover{
+	cursor: pointer;
+}
 .history__right-side{
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -179,6 +183,10 @@ img{
 }
 .about__left-side{
 	width: 225px;
+}
+.about__img{
+	max-width: 180px;
+	max-height: 225px;
 }
 .about__name{
 	font-family: 'Noto', serif;
@@ -212,6 +220,7 @@ img{
 	width: 380px;
 	height: 250px;
 	background: url("../img/video.png");
+	cursor: pointer;
 }
 .play__circle{
 	max-width: 100px;
@@ -219,8 +228,7 @@ img{
 	position: relative;
 	left: 50%;
 	top: 0;
-	transform: translate(-50%, 70%);
-	cursor: pointer;
+	transform: translate(-50%, 70%);	
 }
 .about__down-content{
 	display: flex;
@@ -272,13 +280,113 @@ img{
 	line-height: 24px;
 	color: #2C1909;
 }
-.services__cards{
+/* ========================================================================================= */
+.services__slider {
 	margin-top: 41px;
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	/* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+	user-select: none;
+	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+	touch-action: pan-y;
+	}
+	
+	/* Если где-то внутри слайдера будут изображения,
+	то нужно задать им pointer-events: none,
+	чтобы они не перетаскивались мышью */
+	
+	.services__slider img {
+	pointer-events: none;
+	}
+	
+	.services__slider-list {
+	width: 100%;
+	height: 425px;
+	overflow: hidden;
+	}
+	
+	.services__slider-list.grab {
+	cursor: grab;
+	}
+	
+	.services__slider-list.grabbing{
+	cursor: grabbing;
+	}
+	
+	.services__slider-track {
 	display: flex;
-	justify-content: space-between;
+	}
+	
+	.services__slide {
+	width: 372px;
+	height: 425px;
+	padding-right: 20px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: content-box;
+	}
+	
+	.slide img {
+	/* width: 100%;
+	height: 100%; */
+	}
+	
+	/* .slider-arrows {
+	margin-top: 50px;
+	text-align: center;
+	}   */
+	/* .next,
+	.prev {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	}
+	
+	.next.disabled,
+	.prev.disabled {
+	opacity: .25;
+	pointer-events: none;
+	} */
+	/* ========================================================================================= */
+.services__track{
+	display: flex;
+}
+.services__arrows{
+	display: none;
+	margin: 0 auto;
+	width: fit-content;
+	margin-top: 50px;
+}
+.services__arrow-prev, .services__arrow-next{
+	width: 78px;
+	height: 42px;
+	
+	background-color: #E6E7E9;
+	background-position: center center;
+	background-size: 130%;
+}
+.services__arrow-prev{
+	background-image: url("../img/services_arrow-left.svg");
+}
+.services__arrow-next{
+	background-image: url("../img/services_arrow-right.svg");
+	margin-left: 20px;
+}
+.services__center{
+	display: inline-block;
 }
 .services__card{
-	max-width: 380px;
+	width: 372px;
+	height: 425px;
+	flex-shrink: 0;
+	box-sizing: border-box;
 	background-position: right center;
 	background-repeat: no-repeat;
 	background-color: #FFFFFF;
@@ -311,6 +419,7 @@ img{
 	line-height: 19px;
 	color: #2C1909;
 	max-width: 255px;
+	padding-top: 3px;
 }
 .cards__price{
 	margin-top: 15px;
@@ -334,6 +443,12 @@ img{
 	font-size: 16px;
 	line-height: 22px;
 	color: #7D4E24;
+}
+.cards__btn:hover{
+	cursor: pointer;
+	color: #FFFFFF;
+	background: #7D4E24;
+	box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
 }
 
 .why__inner{
@@ -439,6 +554,26 @@ img{
 	width: fit-content;
 	margin: 70px auto 20px auto;
 }
+.slider_prev-btn, .slider_next-btn{
+	background-color: #ffffff;	
+	background-repeat: no-repeat;
+	background-size: 120% 120%;
+	background-position: center center;
+	width: 60px;
+	height: 60px;
+}
+.slider_prev-btn{
+	background-image: url("../img/btn_slider_left.svg");
+}
+.slider_next-btn{
+	background-image: url("../img/btn_slider_right.svg");
+}
+.slider_next-btn:hover{
+	background-image: url("../img/btn_slider_right_hover.svg");
+}
+.slider_prev-btn:hover{
+	background-image: url("../img/btn_slider_left-hover.svg");
+}
 
 /* ========================================================================================= */
 .slider {
@@ -505,7 +640,6 @@ text-align: center;
 display: inline-block;
 vertical-align: middle;
 padding: 0;
-background: none;
 border: none;
 cursor: pointer;
 }
@@ -535,11 +669,17 @@ font-weight: 700;
 font-size: 20px;
 line-height: 27px;
 color: #7D4E24;
+background-color: #FFFFFF;
 
 border: 1px solid #7D4E24;
 box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
 border-radius: 50px;
 padding: 10px 35px;
+}
+.examples__btn:hover{
+	color: #FFFFFF;
+	background: #7D4E24;
+	cursor: pointer;
 }
 .beginning{
 	background-color: #E6E7E9;
@@ -560,27 +700,37 @@ padding: 10px 35px;
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
-	align-content: center;
-	justify-content: center;
+	justify-content: space-between;
 	max-width: 1180px;
+	overflow: hidden;
 	
 	position: relative;
 	left: 50%;
 	transform: translate(-50%, 0);
 }
 .beginning__left-side{
-	padding: 50px 80px 50px 100px;
+	padding: 0 80px 0 100px;
 	width: 50%;
 	box-sizing: border-box;
 	flex-shrink: 0;
 }
 .beginning__right-side{
-	width: 50%;	
+	width: 578px;	
+	height: 100%;
 	min-height: 100%;
-	box-sizing: border-box;
+	box-sizing: border-box;	
+
+	/* background-image: url("../img/family.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: cover; */
 }
+/* .beginning__right-side>img{
+	background-position: left center;
+} */
 .beginning__right-side>img{
-	object-fit: cover;
+	object-fit: contain;
+	width: auto;
 }
 .beginning__title{
 	font-family: 'Noto', serif;
@@ -596,7 +746,7 @@ padding: 10px 35px;
 	line-height: 24px;
 	color: #2C1909;
 	max-width: 410px;
-	margin-bottom: 35px;
+	margin-bottom: 32px;
 }
 .beginning__text>span{
 	font-weight: 700;
@@ -614,6 +764,11 @@ padding: 10px 35px;
 	font-size: 20px;
 	line-height: 27px;
 	color: #007632;
+}
+.beginning_btn:hover{
+	cursor: pointer;
+	color: #FFFFFF;
+	background: #007632;
 }
 .reviews{
 	overflow-x: hidden;
@@ -692,6 +847,7 @@ padding: 10px 35px;
 .reviews__arrow{
 	width: 80px;
 	height: 42px;
+	background-color: #FFFFFF;
 }
 .reviews__center{
 	display: inline-block;
@@ -790,13 +946,86 @@ padding: 10px 35px;
 	line-height: 24px;
 	color: #007632;
 }
-.useful__links{
+.useful__cards{
 	display: flex;
-	justify-content: space-between;
 }
-.useful__link{
+
+
+/* ========================================================================================= */
+.useful__slider {
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	/* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+	user-select: none;
+	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+	touch-action: pan-y;
+	}
+	
+	/* Если где-то внутри слайдера будут изображения,
+	то нужно задать им pointer-events: none,
+	чтобы они не перетаскивались мышью */
+	
+	.useful__slider img {
+	pointer-events: none;
+	}
+	
+	.useful__list {
+	width: 100%;
+	height: 323px;
+	overflow: hidden;
+	}
+	
+	.useful__list.grab {
+	cursor: grab;
+	}
+	
+	.useful__list.grabbing{
+	cursor: grabbing;
+	}	
+	
+	.useful__card {
+	width: 380px;
+	height: 323px;
+	/* Чтобы слайды не сжимались */
 	flex-shrink: 0;
+	display: flex;
+	align-items: top;
+	justify-content: center;
+	box-sizing: content-box;
+	}
+	
+	.slide img {
+	width: 100%;
+	height: 100%;
+	}
+	
+	.slider-arrows {
+	margin-top: 50px;
+	text-align: center;
+	}  
+	/* .next,
+	.prev {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	}
+	
+	.next.disabled,
+	.prev.disabled {
+	opacity: .25;
+	pointer-events: none;
+	} */
+	/* ========================================================================================= */
+
+
+
+.useful__link{
 	text-decoration: none;
+	padding: 0 10px;
 }
 .useful__pic{
 	max-width: 380px;
@@ -833,8 +1062,8 @@ padding: 10px 35px;
 .footer__title{
 	font-family: 'Noto', serif;
 	font-weight: 700;
-	font-size: 24px;
-	line-height: 33px;
+	font-size: 20px;
+	line-height: 27px;
 	color: #FFFFFF;
 	padding-bottom: 20px;
 }
@@ -847,13 +1076,14 @@ padding: 10px 35px;
 }
 .footer__link{
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 16px;
+	line-height: 19px;
 	color: rgba(228, 228, 228, 0.8);
 	text-decoration: none;
 }
 .footer__link>img{
 	padding-top: 10px;
+	padding-right: 19px;
 	max-width: 25px;
 	max-height: 23px;
 }
@@ -876,7 +1106,7 @@ padding: 10px 35px;
 }
 .policy__text{
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 22px;
 	letter-spacing: 0.025em;
 	color: rgba(255, 255, 255, 0.8);
@@ -886,3 +1116,115 @@ padding: 10px 35px;
 .overlay{position:fixed;display:none;justify-content:center;align-items:center;width:100%;height:100%;top:0;background-color:rgba(0,0,0,.8)}
 .overlay .video{width:720px;height:480px;position:relative}
 .overlay .close{color:#fff;font-size:36px;position:absolute;top:-27px;right:-25px;cursor:pointer}
+
+.text-one, .text-two, .text-three{
+	vertical-align: top;
+}
+
+@media (max-width: 1024px) {
+	.header__logo{
+		max-width: 188px;
+		max-height: 194px;
+	}
+	.header__contacts{
+		width: auto;
+	}
+	.about__inner{
+		margin-bottom: 76px;
+	}
+	.about__img{
+		max-width: 176px;
+		max-height: 220px;
+	}
+	.about__center {
+		max-width: 372px;
+	}
+	.about__video{
+		max-width: 372px;
+		max-height: 245px;
+		padding-right: 10px;
+	}
+	.play__circle{
+		max-width: 98px;
+		max-height: 98px;
+	}
+	.about__down-content{
+		margin-top: 40px;
+	}
+	.about__foot-item{
+		max-width: 176px;
+	}
+	.services__inner{
+		margin: 100px 0 50px 0;
+	}
+	.services__head{
+		gap: auto;
+	}
+	.services__title{
+		max-width: 222px;
+	}
+	.services__desc{
+		max-width: 680px;
+	}
+	.services__arrows{
+		display: block;
+	}
+	.why__inner{
+		padding: 100px 0 68px 0;
+	}
+	.stages__desc{
+		max-width: 622px;
+	}
+	.slider{
+		margin: 0 46px;
+		width: 678px;
+		height: 458px;
+	}
+	.slider-list{
+		width: 678px;
+		height: 458px;
+	}
+	.slide{
+		width: 678px;
+		height: 458px;
+	}
+	.beginning__left-side{
+		padding: 0 58px 0 25px;
+		width: 52%;
+	}
+	.beginning__right-side{
+		width: 48%;
+	}
+	/* .reviews__inner{
+		white-space: nowrap;
+	} */
+	.reviews__slider{
+		width: 576px;
+	}
+	.reviews__slider-list{
+		width: 576px;
+	}
+	.reviews__slide{
+		padding: 0 4px;
+	}
+	.reviews>.container{
+		width: 100%;
+		left: 0;
+		transform: translate(0, 0);
+	}
+
+
+
+
+
+
+	.col-2{
+		max-width: 198px;
+	}
+	.col-3{
+		max-width: 380px;
+	}
+	.text-two{
+		max-width: 176px;
+	}
+}

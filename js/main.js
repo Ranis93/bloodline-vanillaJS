@@ -192,5 +192,9 @@ window.addEventListener('DOMContentLoaded', () => {
   try {
     dragDropSlider('.reviews__slider', '.reviews__slider-list', '.reviews__slider-track', '.reviews__slide', '.reviews__arrows');
   } catch (error) {} 
+  try {
+    dragDropSlider('.services__slider', '.services__list', '.services__track', '.services__slide', '.services__arrows');
+  } catch (error) {}
 
+  dragDropSlider('.useful__slider', '.useful__list', '.useful__cards', '.useful__card', '.useful__arrows');
   });
