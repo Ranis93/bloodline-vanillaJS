@@ -1500,8 +1500,9 @@ padding: 10px 35px;
 		line-height: 35px;
 		position: absolute;
 		top: 0;
-		right: 0;
-		max-width: 260px;
+		right: 5px;
+		max-width: 257px;
+		margin-left: 160px;
 	}
 	.about__up-content{
 		position: relative;
@@ -1511,17 +1512,17 @@ padding: 10px 35px;
 		font-size: 18px;
 		line-height: 22px;
 	}
-	.about__right{
+	/* .about__right{
 		max-width: 440px;
 		max-height: 227px;
-	}
-	.about__video{
+	} */
+	/* .about__video{
 		max-width: 440px;
 		max-height: 227px;
 		background-position: center center;
 		background-size: cover;
 		border-radius: 30px;
-	}
+	} */
 	.about__down-content{
 		position: static;
 		margin-top: 82px;
@@ -1699,8 +1700,4 @@ padding: 10px 35px;
 	}
 	.overlay .video{width:100%;height:50%;position:relative}
 	.overlay .close{color:#fff;font-size:55px;position:absolute;top:-65px;right:20px;cursor:pointer}
-
-
-
-
 }
