@@ -453,12 +453,13 @@ img{
 	background: #7D4E24;
 	box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
 }
-
-.why__inner{
-	padding: 100px 0;
+.why{
 	background-image: url("../img/why_bg.png");
 	background-repeat: no-repeat;
 	background-position: right center;
+}
+.why__inner{
+	padding: 100px 0;	
 }
 .why__title{
 	font-family: 'Noto', serif;
@@ -719,21 +720,11 @@ padding: 10px 35px;
 }
 .beginning__right-side{
 	width: 578px;	
-	height: 100%;
-	min-height: 100%;
+	max-height: 299px;
 	box-sizing: border-box;	
-
-	/* background-image: url("../img/family.png");
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: cover; */
 }
-/* .beginning__right-side>img{
-	background-position: left center;
-} */
-.beginning__right-side>img{
+.beginning__right-side>img{	
 	object-fit: contain;
-	width: auto;
 }
 .beginning__title{
 	font-family: 'Noto', serif;
@@ -926,7 +917,6 @@ padding: 10px 35px;
 	background-image: url('../img/useful_bg.png');
 	background-repeat: no-repeat;
 	background-position: right center;
-	background-size: 50% 100%;
 }
 .useful__inner{
 	padding: 100px 0 90px 0;
