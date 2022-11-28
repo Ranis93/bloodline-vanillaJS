@@ -1694,6 +1694,11 @@ padding: 10px 35px;
 	.policy__inner{
 		position: relative;
 	}
+	.policy__text{
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.025em;
+	}
 	.policy__left-side{
 		flex-shrink: 0;
 	}
@@ -1703,7 +1708,7 @@ padding: 10px 35px;
 	.text-three{
 		position: absolute;
 		left: 0;
-		bottom: 0;
+		bottom: 0px;
 	}
 	.overlay .video{width:100%;height:50%;position:relative}
 	.overlay .close{color:#fff;font-size:55px;position:absolute;top:-65px;right:20px;cursor:pointer}	
