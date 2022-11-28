@@ -196,5 +196,29 @@ window.addEventListener('DOMContentLoaded', () => {
     dragDropSlider('.services__slider', '.services__list', '.services__track', '.services__slide', '.services__arrows');
   } catch (error) {}
 
-  dragDropSlider('.useful__slider', '.useful__list', '.useful__cards', '.useful__card', '.useful__arrows');
+  try {
+    dragDropSlider('.useful__slider', '.useful__list', '.useful__cards', '.useful__card', '.useful__arrows');
+  } catch (error) {}
+
+
+  (function() {
+    const burger = document.querySelector('.header__burger');
+    const nav = document.querySelector('.header__burger-menu');
+    const closeBtn = document.querySelector('.header__nav-close');
+    
+    burger.addEventListener('click', () => {
+        nav.classList.add('header__nav_active');
+        console.log('hello')
+    })
+    
+    closeBtn.addEventListener('click', () => {
+        nav.classList.remove('header__nav_active');
+        console.log('bye')
+    })
+    }());
+
+
+
   });
+
+ 
