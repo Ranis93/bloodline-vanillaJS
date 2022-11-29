@@ -221,26 +221,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+    ShowMenu('.header__item', '.header__nav-list', 'active', 'show')
+    ShowMenu('.header__burger-link', '.burger-link__ul', 'link_active', 'link_show')
     // Menu elements 
-    const menuElems = document.querySelectorAll('.header__item'),
-    burgerElems = document.querySelectorAll(".header__nav-list");
+    function ShowMenu(parentSelector, listSelector, activeClassSelector, showHideSelector) {
+        const menuElems = document.querySelectorAll(parentSelector),
+        list = document.querySelectorAll(listSelector);
 
-    menuElems.forEach((menuElem, num)=>{
-        menuElem.addEventListener('click', ()=> {
-            menuElems.forEach(item=>{
-                item.classList.remove("active");
-            });
-            menuElems[num].classList.add("active");
-            burgerElems.forEach(item=>{
-                item.classList.remove("show");
-            });
-            if(menuElems[num].classList.contains("list")){
-                burgerElems[num].classList.add("show");  
-            }   
-                  
+        menuElems.forEach((menuElem, num)=>{
+            menuElem.addEventListener('click', ()=> {
+                menuElems.forEach(item=>{
+                    item.classList.remove(activeClassSelector);
+                });
+                menuElems[num].classList.add(activeClassSelector);
+                list.forEach(item=>{
+                    item.classList.remove(showHideSelector);
+                });
+                if(menuElems[num].classList.contains("list")){
+                    list[num].classList.add(showHideSelector); 
+                }
+            })
         })
-    })
+    }
     // document.onclick = function (e) {
     //     if (e.target.className != "header__item") {
     //         burgerElems.forEach(item=>{
@@ -248,6 +250,8 @@ window.addEventListener('DOMContentLoaded', () => {
     //         });
     //     };
     // };
+
+    // Burger elements 
     
         
 
