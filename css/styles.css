@@ -43,7 +43,6 @@ img{
 	display: flex;
 	justify-content: space-between;
 	width: calc(50%);
-	/* max-width: 665px; */
 }
 .header__contacts-first{
 	max-width: 240px;
@@ -130,6 +129,142 @@ img{
 	max-width: 20px;
 	padding-right: 10px;
 	vertical-align: middle;
+}
+.header__burger-menu {
+	position: fixed;
+	width: 85%;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	background-color: #673800;
+	z-index: 10;
+	padding: 90px 0 0 39px;
+	transform: translateX(100%);
+	transition: .2s all linear;
+	border-radius: 20px 0 0 20px;
+}
+.overflow__stop{
+	overflow-y: hidden;
+}
+.header__nav_active{
+	transform: translateX(0);
+	overflow-y: hidden;
+}
+.header__burger-list{
+	max-width: 100%;
+	margin-right: 20px;
+}
+.header__burger-item {
+	max-width: 401px;
+	margin-right: 0;
+	margin-bottom: 15px;
+	list-style-type: none;
+}
+.header__burger-link::after{
+	content: '';
+	display: block;
+	height: .5px;
+	background: #FFFFFF;
+	min-width: 100%;
+}
+
+.header__item1:last-child {
+	margin-bottom: 0;
+}
+
+.header__burger-link {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 35px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.burger-link__ul{
+	display: none;
+	z-index: 10;
+	transform: translateY(-100%);
+	transition: .2s all linear;
+	
+}
+.burger-link__ul.link_show{
+	display: block;
+	transform: translateY(0);
+	overflow-y: hidden;
+}
+.burger-link__ul>li{
+	list-style-type: none;
+	padding: 15px 0;
+}
+.burger-link__ul>li>a{
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	color: #E4E4E4;
+}
+.header__nav-close {
+	width:50px;
+	height: 35px;
+	position: absolute;
+	top: 23px;
+	right: 20px;
+	z-index: 11;
+	background-image: url('../img/burger-close.svg');
+	background-size: 13px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid #7D4E24;
+	box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
+	border-radius: 5px;
+}
+.header__down-block{
+	display: flex;
+	width: 100%;
+	justify-content: left;
+	align-items: flex-end;
+	margin-top: 85px;
+}
+.header__nav-img{
+	width: 89px;
+	height: 84px;
+	margin-right: 16px;
+}
+.header__nav-txt{
+	max-width: 260px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	color: #E6E7E9;
+}
+.header__item.active{
+	text-decoration: underline;
+}
+.header .header__nav-list {
+	display: none;
+	position: absolute;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px rgba(170, 170, 170, 0.7);
+	z-index: 10;
+	list-style: none;
+	padding: 20px 20px 20px 30px;
+	margin-top: 22px;
+	max-width: 280px;
+}
+.header__nav-list li {
+padding: 1rem;
+}
+.header__nav-list li:hover {
+text-decoration: underline;
+}
+.header__nav-list li a {
+text-decoration: none;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: #673800;
+}
+.header__nav-list.show{
+display: block;
 }
 .history{
 	background-color: rgba(209, 199, 180, 0.84);
@@ -290,7 +425,6 @@ img{
 	line-height: 24px;
 	color: #2C1909;
 }
-/* ========================================================================================= */
 .services__slider {
 	margin-top: 41px;
 	vertical-align: middle;
@@ -302,69 +436,44 @@ img{
 	user-select: none;
 	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
 	touch-action: pan-y;
-	}
+}
 	
 	/* Если где-то внутри слайдера будут изображения,
 	то нужно задать им pointer-events: none,
 	чтобы они не перетаскивались мышью */
 	
-	.services__slider img {
-	pointer-events: none;
-	}
-	
-	.services__slider-list {
-	width: 100%;
-	height: 425px;
-	overflow: hidden;
-	}
-	
-	.services__slider-list.grab {
-	cursor: grab;
-	}
-	
-	.services__slider-list.grabbing{
-	cursor: grabbing;
-	}
-	
-	.services__slider-track {
-	display: flex;
-	}
-	
-	.services__slide {
-	width: 372px;
-	height: 425px;
-	padding-right: 20px;
-	flex-shrink: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-sizing: content-box;
-	}
-	
-	.slide img {
-	/* width: 100%;
-	height: 100%; */
-	}
-	
-	/* .slider-arrows {
-	margin-top: 50px;
-	text-align: center;
-	}   */
-	/* .next,
-	.prev {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0;
-	border: none;
-	cursor: pointer;
-	}
-	
-	.next.disabled,
-	.prev.disabled {
-	opacity: .25;
-	pointer-events: none;
-	} */
-	/* ========================================================================================= */
+.services__slider img {
+pointer-events: none;
+}
+
+.services__slider-list {
+width: 100%;
+height: 425px;
+overflow: hidden;
+}
+
+.services__slider-list.grab {
+cursor: grab;
+}
+
+.services__slider-list.grabbing{
+cursor: grabbing;
+}
+
+.services__slider-track {
+display: flex;
+}
+
+.services__slide {
+width: 372px;
+height: 425px;
+padding-right: 20px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+box-sizing: content-box;
+}
 .services__track{
 	display: flex;
 }
@@ -585,107 +694,92 @@ img{
 .slider_prev-btn:hover{
 	background-image: url("../img/btn_slider_left-hover.svg");
 }
-
-/* ========================================================================================= */
 .slider {
-vertical-align: middle;
-margin-left: 55px;
-margin-right: 55px;
-position: relative;
-display: inline-block;
-width: 730px;
-/* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
-user-select: none;
-/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
-touch-action: pan-y;
+	vertical-align: middle;
+	margin-left: 55px;
+	margin-right: 55px;
+	position: relative;
+	display: inline-block;
+	width: 730px;
+	/* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+	user-select: none;
+	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+	touch-action: pan-y;
 }
-
 /* Если где-то внутри слайдера будут изображения,
 то нужно задать им pointer-events: none,
 чтобы они не перетаскивались мышью */
-
 .slider img {
-pointer-events: none;
+	pointer-events: none;
 }
-
 .slider-list {
-width: 730px;
-height: 493px;
-overflow: hidden;
+	width: 730px;
+	height: 493px;
+	overflow: hidden;
 }
-
 .slider-list.grab {
-cursor: grab;
+	cursor: grab;
 }
-
 .slider-list.grabbing{
-cursor: grabbing;
+	cursor: grabbing;
 }
-
 .slider-track {
-display: flex;
+	display: flex;
 }
-
 .slide {
-width: 730px;
-height: 493px;
-/* Чтобы слайды не сжимались */
-flex-shrink: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-box-sizing: content-box;
+	width: 730px;
+	height: 493px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: content-box;
 }
-
 .slide img {
-width: 100%;
-height: 100%;
+	width: 100%;
+	height: 100%;
 }
-
 .slider-arrows {
-margin-top: 50px;
-text-align: center;
+	margin-top: 50px;
+	text-align: center;
 }  
 .next,
 .prev {
-display: inline-block;
-vertical-align: middle;
-padding: 0;
-border: none;
-cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	border: none;
+	cursor: pointer;
 }
-
 .next.disabled,
 .prev.disabled {
-opacity: .25;
-pointer-events: none;
+	opacity: .25;
+	pointer-events: none;
 }
-/* ========================================================================================= */
-
 .examples__text{
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-color: #2C1909;
-margin: 40px auto;
-max-width: 188px;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #2C1909;
+	margin: 40px auto;
+	max-width: 188px;
 }
 .examples__btn{
-position: relative;
-left: 50%;
-transform: translate(-50%, 0);
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
 
-font-weight: 700;
-font-size: 20px;
-line-height: 27px;
-color: #7D4E24;
-background-color: #FFFFFF;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+	color: #7D4E24;
+	background-color: #FFFFFF;
 
-border: 1px solid #7D4E24;
-box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
-border-radius: 50px;
-padding: 10px 35px;
+	border: 1px solid #7D4E24;
+	box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
+	border-radius: 50px;
+	padding: 10px 35px;
 }
 .examples__btn:hover{
 	color: #FFFFFF;
@@ -696,7 +790,7 @@ padding: 10px 35px;
 	background-color: #E6E7E9;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	border-radius: 20px;
-	
+
 	background-image: url('../img/beginning_bg.png');
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -811,9 +905,7 @@ padding: 10px 35px;
 	max-width: 900px;
 }
 .reviews__card{
-	border-radius: 30px;	
-	/* border: 1px solid rgba(0, 0, 0, 0.05);
-	filter: drop-shadow(0px 4px 4px rgba(222, 187, 125, 0.14)); */
+	border-radius: 30px;
 	border: 1px solid black;
 	padding: 20px;
 	height: 84%;
@@ -829,7 +921,6 @@ padding: 10px 35px;
 	position: absolute;
 	bottom: 20px;
 }
-
 .reviews__photo{
 	width: 40px;
 	height: 40px;
@@ -856,8 +947,6 @@ padding: 10px 35px;
 .reviews__arrow:last-child{
 	margin-left: 20px;
 }
-
-/* ===================================================================================== */
 .reviews__slider {
 	position: relative;
 	max-width: 900px;
@@ -866,35 +955,34 @@ padding: 10px 35px;
 	user-select: none;
 	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
 	touch-action: pan-y;
-  }
-  
+}  
   /* Если где-то внутри слайдера будут изображения,
   то нужно задать им pointer-events: none,
   чтобы они не перетаскивались мышью */
   
-  .reviews__slider img {
+.reviews__slider img {
 	pointer-events: none;
-  }
+}
   
-  .reviews__slider-list {
+.reviews__slider-list {
 	width: 900px;
 	height: 270px;
 	overflow: hidden;
-  }
-  
-  .reviews__slider-list.grab {
+}
+
+.reviews__slider-list.grab {
 	cursor: grab;
-  }
-  
-  .reviews__slider-list.grabbing{
+}
+
+.reviews__slider-list.grabbing{
 	cursor: grabbing;
-  }
-  
-  .reviews__slider-track {
+}
+
+.reviews__slider-track {
 	display: flex;
-  }
-  
-  .reviews__slide {
+}
+
+.reviews__slide {
 	width: 280px;
 	height: 270px;
 	/* Чтобы слайды не сжимались */
@@ -905,20 +993,19 @@ padding: 10px 35px;
 	align-items: center;
 	justify-content: center;
 	box-sizing: content-box;
-  }
+}
 
-  .reviews__slide img {
+.reviews__slide img {
 	width: 100%;
 	height: 100%;
-  }
-  
-  .reviews__arrows {
+}
+
+.reviews__arrows {
 	margin-top: 27px;
 	margin-bottom: 20px;
 	text-align: center;
-  }
-  /* ===================================================================================== */
-  .useful{
+}
+.useful{
 	background-color: rgba(209, 199, 180, 0.84);
 	
 	background-image: url('../img/useful_bg.png');
@@ -949,9 +1036,6 @@ padding: 10px 35px;
 .useful__cards{
 	display: flex;
 }
-
-
-/* ========================================================================================= */
 .useful__slider {
 	vertical-align: middle;
 	position: relative;
@@ -961,31 +1045,30 @@ padding: 10px 35px;
 	user-select: none;
 	/* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
 	touch-action: pan-y;
-	}
+}
 	
-	/* Если где-то внутри слайдера будут изображения,
-	то нужно задать им pointer-events: none,
-	чтобы они не перетаскивались мышью */
-	
-	.useful__slider img {
+/* Если где-то внутри слайдера будут изображения,
+то нужно задать им pointer-events: none,
+чтобы они не перетаскивались мышью */
+
+.useful__slider img {
 	pointer-events: none;
-	}
-	
-	.useful__list {
+}	
+.useful__list {
 	width: 100%;
 	height: 323px;
 	overflow: hidden;
-	}
-	
-	.useful__list.grab {
+}
+
+.useful__list.grab {
 	cursor: grab;
-	}
+}
 	
-	.useful__list.grabbing{
+.useful__list.grabbing{
 	cursor: grabbing;
-	}	
+}	
 	
-	.useful__card {
+.useful__card {
 	width: 380px;
 	height: 323px;
 	/* Чтобы слайды не сжимались */
@@ -994,35 +1077,17 @@ padding: 10px 35px;
 	align-items: top;
 	justify-content: center;
 	box-sizing: content-box;
-	}
-	
-	.slide img {
+}
+
+.slide img {
 	width: 100%;
 	height: 100%;
-	}
+}
 	
-	.slider-arrows {
+.slider-arrows {
 	margin-top: 50px;
 	text-align: center;
-	}  
-	/* .next,
-	.prev {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0;
-	border: none;
-	cursor: pointer;
-	}
-	
-	.next.disabled,
-	.prev.disabled {
-	opacity: .25;
-	pointer-events: none;
-	} */
-	/* ========================================================================================= */
-
-
-
+}
 .useful__link{
 	text-decoration: none;
 	padding: 0 10px;
@@ -1120,173 +1185,6 @@ padding: 10px 35px;
 .text-one, .text-two, .text-three{
 	vertical-align: top;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.header__burger-menu {
-	position: fixed;
-	width: 85%;
-	height: 100vh;
-	top: 0;
-	right: 0;
-	background-color: #673800;
-	z-index: 10;
-	padding: 90px 0 0 39px;
-	transform: translateX(100%);
-	transition: .2s all linear;
-	border-radius: 20px 0 0 20px;
-}
-.overflow__stop{
-	overflow-y: hidden;
-}
-.header__nav_active{
-	transform: translateX(0);
-	overflow-y: hidden;
-}
-.header__burger-list{
-	max-width: 100%;
-	margin-right: 20px;
-}
-.header__burger-item {
-	max-width: 401px;
-	margin-right: 0;
-	margin-bottom: 15px;
-	list-style-type: none;
-}
-.header__burger-link::after{
-	content: '';
-	display: block;
-	height: .5px;
-	background: #FFFFFF;
-	min-width: 100%;
-}
-
-.header__item1:last-child {
-	margin-bottom: 0;
-}
-
-.header__burger-link {
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 35px;
-	color: #FFFFFF;
-	text-decoration: none;
-}
-.burger-link__ul{
-	/* width: 85%;
-	height: fit-content; */
-	display: none;
-	z-index: 10;
-	transform: translateY(-100%);
-	transition: .2s all linear;
-	
-}
-.burger-link__ul.link_show{
-	display: block;
-	transform: translateY(0);
-	overflow-y: hidden;
-}
-.burger-link__ul>li{
-	list-style-type: none;
-	padding: 15px 0;
-}
-.burger-link__ul>li>a{
-	text-decoration: none;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 22px;
-	color: #E4E4E4;
-}
-.header__nav-close {
-	width:50px;
-	height: 35px;
-	position: absolute;
-	top: 23px;
-	right: 20px;
-	z-index: 11;
-	background-image: url('../img/burger-close.svg');
-	background-size: 13px;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: 1px solid #7D4E24;
-	box-shadow: 0px 4px 10px rgba(132, 99, 70, 0.38);
-	border-radius: 5px;
-}
-.header__down-block{
-	display: flex;
-	width: 100%;
-	justify-content: left;
-	align-items: flex-end;
-	margin-top: 85px;
-}
-.header__nav-img{
-	width: 89px;
-	height: 84px;
-	margin-right: 16px;
-}
-.header__nav-txt{
-	max-width: 260px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 17px;
-	color: #E6E7E9;
-}
-
-
-
-
-
-
-
-
-
-.header__item.active{
-	text-decoration: underline;
-}
-.header .header__nav-list {
-	display: none;
-	position: absolute;
-	background: #FFFFFF;
-	box-shadow: 0px 0px 10px rgba(170, 170, 170, 0.7);
-	z-index: 10;
-	list-style: none;
-	padding: 20px 20px 20px 30px;
-	margin-top: 21px;
-	max-width: 280px;
-  }
-  .header__nav-list li {
-	padding: 1rem;
-  }
-  .header__nav-list li:hover {
-	text-decoration: underline;
-  }
-  .header__nav-list li a {
-	text-decoration: none;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
-	color: #673800;
-  }
-  .header__nav-list.show{
-	display: block;
-  }
-
-
 @media (max-width: 1024px) {
 	.header__logo{
 		max-width: 188px;
@@ -1361,9 +1259,6 @@ padding: 10px 35px;
 	.beginning__right-side{
 		width: 48%;
 	}
-	/* .reviews__inner{
-		white-space: nowrap;
-	} */
 	.reviews__slider{
 		width: 576px;
 	}
@@ -1675,17 +1570,6 @@ padding: 10px 35px;
 		font-size: 18px;
 		line-height: 22px;
 	}
-	/* .about__right{
-		max-width: 440px;
-		max-height: 227px;
-	} */
-	/* .about__video{
-		max-width: 440px;
-		max-height: 227px;
-		background-position: center center;
-		background-size: cover;
-		border-radius: 30px;
-	} */
 	.about__down-content{
 		position: static;
 		margin-top: 82px;
