@@ -304,8 +304,8 @@ color: #673800;
 	margin-bottom: 35px;
 	font-family: 'Noto', serif;
 	font-weight: 600;
-	font-size: 24px;
-	line-height: 33px;
+	font-size: 32px;
+	line-height: 44px;
 	color: #7D4E24;
 }
 .main__cards{
@@ -345,13 +345,6 @@ color: #673800;
 	line-height: 17px;
 	color: rgba(0, 0, 0, 0.72);
 }
-
-
-
-
-
-
-
 .beginning{
 	background-color: #E6E7E9;
 	border: 1px solid rgba(0, 0, 0, 0.05);
@@ -508,10 +501,14 @@ color: #673800;
 	.header__logo{
 		max-width: 188px;
 		max-height: 194px;
-	}
+	}	
 	.header__contacts{
 		width: auto;
-	}	
+	}
+	.main__title{
+		font-size: 24px;
+		line-height: 33px;
+	}
 	.beginning__left-side{
 		padding: 0 58px 0 25px;
 		width: 52%;
@@ -726,4 +723,96 @@ color: #673800;
 	}
 	.overlay .video{width:100%;height:50%;position:relative}
 	.overlay .close{color:#fff;font-size:55px;position:absolute;top:-65px;right:20px;cursor:pointer}	
+}
+@media (max-width: 360px) {
+	.header__hat{
+		margin-bottom: 32px;
+	}
+	.header__logo{
+		width: 86px;
+		height: 91px;
+	}
+	.header__excort>a{
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.header__mail{
+		font-size: 14px;
+		margin-top: 10px;
+	}
+	.header__phone{
+		font-size: 14px;
+		line-height: 19px;
+	}
+	.header__schedule{
+		margin-top: 8px;
+	}
+	.header__burger{
+		width: 37px;
+		height: 26px;
+		margin-top: 20px;
+	}
+	.main__card{
+		max-width: 150px;
+	}
+	.card__img{
+		height: 90px;
+	}
+	.card__title{
+		font-size: 16px;
+		line-height: 22px;
+		height: 66px;
+	}
+	.card__desc{
+		margin-top: 5px;
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+
+
+
+	.beginning__title{
+		font-size: 24px;
+		line-height: 33px;
+	}
+	.beginning__text{
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.beginning_btn{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.beginning__right-side{
+		max-height: 167px;
+	}	
+	.footer__inner{
+		padding-bottom: 51px;
+	}
+	.col-1{
+		max-width: 122px;
+	}
+	.col-2{
+		max-width: 150px;
+	}
+	.col-3{
+		max-width: 176px;
+	}
+	.policy{
+		height: 118px;
+	}
+	.policy>.container{
+		height: 60px;
+	}
+	.policy__inner{
+		padding: 20px 0;
+		height: 100%;
+	}
+	.text-one, .text-two{
+		max-width: 150px;
+	}
+	.text-three{
+		max-width: 150px;
+	}
 }
