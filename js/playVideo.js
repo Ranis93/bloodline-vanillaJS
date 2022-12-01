@@ -58,5 +58,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    new VideoPlayer('.about__video', '.overlay').init();
+    try {
+        new VideoPlayer('.about__video', '.overlay').init();
+    } catch (error) {}
+    try {
+        new VideoPlayer('.blbloks-request__video', '.overlay').init();
+    } catch (error) {}
 })

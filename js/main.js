@@ -249,14 +249,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     ShowMenu('.header__item', '.header__nav-list', 'active', 'show')
     ShowMenu('.header__burger-link', '.burger-link__ul', 'link_active', 'link_show')
-    // document.onclick = function (e) {
-    //     if (e.target.className != "header__item") {
-    //         burgerElems.forEach(item=>{
-    //             item.classList.remove("show");
-    //         });
-    //     };
-    // };
     
+
         
 
 
