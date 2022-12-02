@@ -1034,6 +1034,10 @@ box-sizing: content-box;
 	font-size: 20px;
 	line-height: 24px;
 	color: #007632;
+	text-decoration: none;
+}
+.useful__text:hover{
+	text-decoration: underline;
 }
 .useful__cards{
 	display: flex;
