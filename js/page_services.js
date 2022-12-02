@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function store(){
         let hash = window.location.hash.replace("#", '');
+        useful.style.display = "none"   // Если сразу делать display:none - то слайдер не работает
         createBredcrumbs("Родословные книги");
-        console.log(hash)
         switch (hash) {
             case "blbooks":
                 main.style.display = "none"

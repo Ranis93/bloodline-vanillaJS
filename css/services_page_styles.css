@@ -432,6 +432,9 @@ color: #673800;
 	background-repeat: no-repeat;
 	background-position: right center;
 }
+.show{
+	display: block;
+}
 .useful__inner{
 	padding: 100px 0 90px 0;
 }
@@ -507,9 +510,6 @@ color: #673800;
 .slider-arrows {
 	margin-top: 50px;
 	text-align: center;
-}
-.useful{
-	display: none;
 }
 .useful__link{
 	text-decoration: none;
@@ -1191,7 +1191,7 @@ color: #673800;
 	}
 	.blbloks-request__right-side{
 		width: 100%;
-		height: 289px;
+		height: 232px;
 		max-height: 289px;
 	}
 	.blbloks-request__video{
@@ -1385,9 +1385,24 @@ color: #673800;
 		font-size: 10px;
 		line-height: 14px;
 	}
-
-
-
+	.blbloks-request{
+		padding: 48px 0 50px 0;
+	}
+	.blbloks-request__text{
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.blbloks-request__btn{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.blbloks-request__right-side{
+		max-height: 212px;
+	}
+	.blbloks-request__play-circle{
+		width: 85px;
+		height: 85px;
+	}
 
 
 
