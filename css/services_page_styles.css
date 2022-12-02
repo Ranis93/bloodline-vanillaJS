@@ -269,30 +269,30 @@ color: #673800;
 .header__nav-list.show{
 	display: block;
 }
-.navigate{
-	background-color: #F5F5F5;
+.bredcrumbs{
 	padding-top: 20px;
 }
-.navigate__list{
+.bredcrumbs__list{
 	display: flex;
 	align-items: center;
 	justify-content: left;
 	gap: 7px;
 }
-.navigate{
+.bredcrumb{
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
 	color: rgba(0, 0, 0, 0.72);
+	text-decoration: none;
 }
-.navigate__pointer{
+.bredcrumb__pointer{
 	width: 14px;
 	height: 14px;
-	background-image: url('../img/navigate_pointer.svg');
+	background-image: url('../img/bredcrumbs_pointer.svg');
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-.navigate__current{
+.bredcrumb.current{
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
@@ -1019,10 +1019,6 @@ color: #673800;
 		width: 92px;
 		height: 92px;
 	}
-
-
-
-
 	.card__img{
 		height: 119px;
 	}
@@ -1119,6 +1115,88 @@ color: #673800;
 	}
 	.card__img{
 		height: 109px;
+	}
+	.blbooks{
+		margin-top: 25px;
+	}
+	.blbooks__title{
+		font-size: 24px;
+		line-height: 33px;
+	}
+	.blbooks__desc{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.blbooks-why__text{
+		max-width: 80%;
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.blbooks-how__text{
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.blbooks-how__text>span{
+		font-weight: 700;
+	}
+	.blbooks-how__appeal{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.blbooks-choose__text{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.blbooks-choose__cards{
+		row-gap: 40px;
+		column-gap: normal;
+		justify-content: space-between;
+	}
+	.blbooks-choose__card{
+		width: 49%;	
+		max-width: 210px;		
+	}
+	.blbooks-choose__img{
+		margin-bottom: 25px;
+	}
+	.blbooks-choose__new-price{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.blbooks-choose__old-price{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.blbooks-choose__btn{
+		font-size: 14px;
+		line-height: 19px;
+	}
+	.blbloks-request{
+		padding: 60px 0;
+	}
+	.blbloks-request__inner{
+		flex-wrap: wrap;
+		padding: 0;
+	}
+	.blbloks-request__title{
+		position: static;
+	}
+	.blbloks-request__text{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.blbloks-request__btn{
+		margin-bottom: 30px;
+	}
+	.blbloks-request__right-side{
+		width: 100%;
+		height: 289px;
+		max-height: 289px;
+	}
+	.blbloks-request__video{
+		width: 100%;
+		height: 100%;
 	}
 	.beginning{
 		background-size: auto;
@@ -1274,6 +1352,52 @@ color: #673800;
 		font-size: 12px;
 		line-height: 14px;
 	}
+	.blbooks__desc{
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.blbooks-how__text{
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.blbooks-how__appeal{
+		font-size: 16px;
+		line-height: 19px;
+	}
+	.blbooks-how__btn{
+		font-size: 16px;
+		line-height: 22px;
+		padding: 10px 30px;
+	}
+	.blbooks-choose__text{
+		font-size: 16px;
+		line-height: 19px;
+		margin-bottom: 30px;
+	}
+	.blbooks-choose__new-price, .blbooks-choose__old-price{
+		font-size: 14px;
+		line-height: 19px;
+	}
+	.blbooks-choose__old-price{
+		margin-left: 10px;
+	}
+	.blbooks-choose__btn{
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	.beginning__title{
 		font-size: 24px;
 		line-height: 33px;

@@ -210,12 +210,12 @@ window.addEventListener('DOMContentLoaded', () => {
         
         burger.addEventListener('click', () => {
             nav.classList.add('header__nav_active');
-            body.classList.add('overflow__stop');
+            //body.classList.add('overflow__stop');
         })
         
         closeBtn.addEventListener('click', () => {
             nav.classList.remove('header__nav_active');
-            body.classList.remove('overflow__stop');
+            //body.classList.remove('overflow__stop');
         })
         }());
   } catch (error) {}
